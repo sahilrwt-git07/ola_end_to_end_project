@@ -22,7 +22,7 @@ WHERE Booking_Status = 'cancelled by Customer';
 
 ---#4. List the top 5 customers who booked the highest number of rides:
 Create View Top_5_Customers As
-SELECT Customer_ID, COUNT(Booking_ID) as total_rides
+SELECT TOP 5 Customer_ID, COUNT(Booking_ID) as total_rides
 FROM bookings
 GROUP BY Customer_ID
 ORDER BY total_rides DESC ;
